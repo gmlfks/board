@@ -41,6 +41,6 @@ BoardService는 사용자들이 효율적으로 게시글을 작성하고 관리
   
 ## 라이선스
 
-
+https://github.com/hojunnnnn/board.git
 
 
