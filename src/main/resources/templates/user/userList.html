@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User List</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin: 30px 0;
+            font-size: 28px;
+        }
+        table {
+            width: 80%;
+            margin: 0 auto;
+            border-collapse: collapse;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            border-radius: 10px;
+        }
+        th, td {
+            padding: 15px;
+            text-align: left;
+            font-size: 16px;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        td {
+            background-color: #f9f9f9;
+            border-bottom: 1px solid #ddd;
+        }
+        tr:hover td {
+            background-color: #f1f1f1;
+        }
+        .action-btn {
+            padding: 8px 15px;
+            background-color: #28a745;
+            color: white;
+            font-weight: bold;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+        .action-btn:hover {
+            background-color: #218838;
+        }
+        .btn-container {
+            display: flex;
+            justify-content: flex-start;
+            gap: 10px;
+        }
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .pagination a {
+            padding: 8px 12px;
+            border-radius: 5px;
+            text-decoration: none;
+            color: #007bff;
+            border: 1px solid #007bff;
+            font-weight: bold;
+        }
+        .pagination a:hover {
+            background-color: #007bff;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<h1>회원 리스트</h1>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Username</th>
+        <th>Nickname</th>
+        <th>Email</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- 사용자 목록을 반복하여 출력 -->
+    <tr th:each="user : ${users}">
+        <td th:text="${user.id}">1</td> <!-- user_id -> id로 수정 -->
+        <td th:text="${user.username}">username</td>
+        <td th:text="${user.nickname}">nickname</td>
+        <td th:text="${user.email}">email@example.com</td>
+        <td class="btn-container">
+            <!-- 회원 보기 링크 (ID를 URL에 포함) -->
+            <a th:href="@{/user/users/{id}(id=${user.id})}" class="action-btn">보기</a> <!-- user_id -> id로 수정 -->
+            <a href="#" class="action-btn" style="background-color: #dc3545;">삭제</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<!-- 페이지네이션 (예시) -->
+<div class="pagination">
+    <a href="#">« Prev</a>
+    <a href="#">1</a>
+    <a href="#">2</a>
+    <a href="#">3</a>
+    <a href="#">Next »</a>
+</div>
+</body>
+</html>

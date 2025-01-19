@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>게시글 검색</title>
+  <link rel="stylesheet" href="/css/post-search.css">
+</head>
+<body>
+
+<div class="container">
+  <h1>게시글 검색</h1>
+
+  <!-- 검색 폼 -->
+  <form method="get" th:action="@{/post/postSearch}" class="search-form">
+    <input type="text" name="keyword" placeholder="검색어 입력" th:value="${keyword}" required class="search-input"/>
+    <button type="submit" class="search-btn">검색</button>
+  </form>
+
+  <!-- 검색 결과 -->
+  <h2 th:if="${searchList.content.isEmpty()}">검색 결과가 없습니다.</h2>
+  <div th:if="${not searchList.content.isEmpty()}">
+    <ul class="post-list">
+      <li th:each="post : ${searchList.content}" class="post-item">
+        <h3 class="post-title">
+          <a th:href="@{/post/read/{id}(id=${post.id})}" th:text="${post.title}">게시글 제목</a>
+        </h3>
+        <p class="post-writer" th:text="${post.writer}">작성자</p>
+        <p class="post-date" th:text="${post.createdDate}">작성일</p>
+        <hr class="post-divider">
+      </li>
+    </ul>
+  </div>
+
+  <!-- 페이지네이션 -->
+  <div class="pagination">
+    <span th:if="${hasPrev}">
+        <a th:href="@{/post/postSearch?keyword=${keyword}&page=${previous}}" class="pagination-link">이전</a>
+    </span>
+
+    <span th:if="${hasNext}">
+        <a th:href="@{/post/postSearch?keyword=${keyword}&page=${next}}" class="pagination-link">다음</a>
+    </span>
+  </div>
+
+</div>
+
+</body>
+</html>

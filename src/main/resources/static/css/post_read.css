@@ -1,0 +1,139 @@
+/* post-read.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+h1 {
+    text-align: center;
+    color: #004d99;
+}
+.container {
+    width: 80%;
+    margin: 20px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+.post-header {
+    margin-bottom: 20px;
+    border-bottom: 2px solid #e6f1ff;
+    padding-bottom: 10px;
+}
+.post-header h2 {
+    color: #003366;
+    position: relative;
+}
+.post-header .writer {
+    font-size: 14px;
+    color: #0066cc;
+    margin-top: 10px;
+}
+.post-content {
+    margin-top: 20px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+}
+.post-comments {
+    margin-top: 30px;
+}
+.post-comments h3 {
+    color: #004d99;
+}
+.comment-form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+#comment-content {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    resize: vertical;
+    margin-bottom: 10px;
+}
+.comment-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.comment-actions .btn {
+    font-size: 12px;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.comment-actions .btn-edit {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.comment-actions .btn-edit:hover {
+    background-color: #45a049;
+}
+
+.comment-actions .btn-delete {
+    background-color: #f44336;
+    color: white;
+}
+
+.comment-actions .btn-delete:hover {
+    background-color: #e53935;
+}
+
+.submit-btn {
+    align-self: flex-end;
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 14px;
+}
+.submit-btn:hover {
+    background-color: #004d99;
+}
+.post-footer {
+    margin-top: 30px;
+    text-align: right;
+}
+.back-btn, .edit-btn, .delete-btn {
+    padding: 10px 15px;
+    margin: 5px;
+    background-color: #004d99;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.back-btn:hover, .edit-btn:hover, .delete-btn:hover {
+    background-color: #003366;
+}
+.delete-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    font-size: 12px;
+    background-color: rgba(0, 0, 0, 0.1);
+    color: #ff0000;
+    border-radius: 3px;
+    border: 1px solid #ff0000;
+}
+.delete-btn:hover {
+    background-color: rgba(255, 0, 0, 0.1);
+    color: #ff3333;
+}

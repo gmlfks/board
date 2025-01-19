@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BoardService</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #e0f7fa; /* Light blue background */
+            margin: 0;
+            padding: 0;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 48px; /* Larger title */
+            color: #0277bd; /* Blue text */
+            margin-bottom: 20px;
+        }
+
+        .welcome-text {
+            font-size: 40px;
+            color: #01579b; /* Darker blue */
+            margin-bottom: 40px;
+        }
+
+        .buttons {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .buttons a {
+            text-decoration: none;
+            color: white;
+            background-color: #0288d1;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .buttons a:hover {
+            background-color: #01579b; /* Blue on hover */
+        }
+
+        /* Increased width for better text display */
+        .intro-text {
+            width: 90%; /* Increase the width */
+            max-width: 800px; /* Max width to avoid excessive stretching */
+            text-align: center;
+            color: #0288d1;
+            font-size: 18px;
+            margin-top: 40px;
+        }
+
+        .intro-text p {
+            font-size: 18px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+<h1>BoardService를 소개합니다</h1> <!-- Updated title -->
+
+<div class="buttons">
+    <a href="/auth/join">회원가입</a>
+    <a href="/auth/login">로그인</a>
+</div>
+
+<!-- Introductory text section outside box -->
+<div class="intro-text">
+    <p>BoardService는 사용자들이 효율적으로 게시글을 작성하고 관리할 수 있도록 돕는 플랫폼입니다.</p>
+    <p>쉽게 게시글을 작성하고, 편리하게 검색하고 관리할 수 있는 서비스를 제공합니다.</p>
+    <p>지금 바로 가입하여 다양한 기능을 경험해보세요!</p>
+</div>
+
+</body>
+</html>

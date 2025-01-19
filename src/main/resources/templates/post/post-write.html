@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시물 작성</title>
+    <!-- Bootstrap CDN 링크 추가 -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <script>
+        function submitForm(event) {
+            event.preventDefault(); // 기본 폼 제출 동작 방지
+
+            const formData = {
+                title: document.getElementById('title').value,
+                content: document.getElementById('content').value,
+                writer: document.getElementById('writer').value
+            };
+
+            fetch('/api/post', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert('게시물이 성공적으로 작성되었습니다!');
+                window.location.href = '/welcome';  // 성공 시 목록 페이지로 리다이렉션
+            })
+            .catch(error => {
+                alert('Error: ' + error);
+            });
+        }
+    </script>
+</head>
+<body>
+
+<div class="container col-md-8 mt-5">
+    <h2 class="text-center mb-4">게시물 작성</h2>
+
+    <form onsubmit="submitForm(event)" class="shadow p-4 bg-white rounded">
+        <div class="form-group">
+            <label for="title">제목</label>
+            <input type="text" class="form-control" id="title" name="title" placeholder="제목을 입력하세요" required>
+        </div>
+
+        <input type="hidden" class="form-control" id="writer" name="writer" th:value="${user.nickname}">
+
+        <div class="form-group">
+            <label for="content">내용</label>
+            <textarea rows="10" class="form-control" id="content" name="content" placeholder="내용을 입력하세요" required></textarea>
+        </div>
+
+        <div class="text-center">
+            <button type="submit" id="btn-save" class="btn btn-primary btn-lg">게시물 작성</button>
+        </div>
+    </form>
+
+    <div class="text-center mt-3">
+        <a href="/welcome" role="button" class="btn btn-info btn-lg">목록으로 돌아가기</a>
+    </div>
+</div>
+
+<!-- Bootstrap JS와 Popper.js 링크 추가 -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

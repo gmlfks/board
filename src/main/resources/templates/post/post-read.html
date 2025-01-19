@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>글 상세 보기</title>
+    <link rel="stylesheet" href="/css/post_read.css">
+
+</head>
+<body>
+
+<div class="container">
+    <div class="post-header">
+        <h2 th:text="${post.title}">글 제목</h2>
+        <p class="writer">
+            작성자: <span th:text="${post.writer}">작성자</span>
+            <span th:if="${writer}" style="color: green;">(본인)</span>
+        </p>
+        <p>작성일: <span th:text="${post.createdDate}">작성일</span></p>
+        <button type="button" th:onclick="|deletePost(${post.id})|" id="btn-delete" class="delete-btn"
+                th:if="${writer}">삭제</button>
+    </div>
+
+    <div class="post-content">
+        <p th:text="${post.content}">글 내용</p>
+    </div>
+
+    <!-- 댓글 섹션 -->
+    <div class="post-comments">
+        <h3>댓글</h3>
+        <div th:if="${comments != null}">
+            <div id="comment-list">
+                <div th:each="comment : ${comments}">
+                    <p><strong th:text="${comment.nickname}">작성자 ID</strong></p>
+                    <p th:text="${comment.comments}">댓글 내용</p>
+
+                    <p>
+                        작성일: <span th:text="${comment.createdDate}">작성일</span>
+                        <span th:if="${comment.modifiedDate != null}">(수정일: <span th:text="${comment.modifiedDate}">수정일</span>)
+                    </span>
+                    </p>
+
+
+                    <div class="comment-actions">
+                        <button type="button" class="btn btn-edit" th:onclick="|editComment(${comment.id}, ${post.id})|">수정</button>
+                        <button type="button" class="btn btn-delete" th:onclick="|deleteComment(${comment.id}, ${post.id})|">삭제</button>
+                    </div>
+                    <hr>
+                </div>
+            </div>
+        </div>
+        <div th:if="${comments == null || comments.isEmpty()}">
+            <p>댓글이 없습니다.</p>
+        </div>
+
+        <div class="comment-form" th:if="${user != null}">
+            <textarea id="comment-content" rows="4" placeholder="댓글을 입력하세요..."></textarea>
+            <input type="hidden" id="postsId" th:value="${post.id}"> <!-- 게시글 ID를 숨은 필드로 추가 -->
+            <button type="button" id="btn-comment-save" class="submit-btn">댓글 작성</button>
+
+        </div>
+    </div>
+
+    <div class="post-footer">
+        <a th:href="@{/welcome}" class="back-btn">목록으로</a>
+        <a th:if="${writer}" th:href="@{/post/postUpdate/{id}(id=${post.id})}" class="edit-btn">수정하기</a>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="/js/comment.js"></script>
+
+<script>
+    function deletePost(postId) {
+        if (confirm("정말 삭제하시겠습니까?")) {
+            fetch(`/api/post/delete/${postId}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert("삭제되었습니다.");
+                    window.location.href = "/welcome";
+                } else {
+                    alert("삭제 실패");
+                }
+            })
+            .catch(error => {
+                alert("삭제 중 오류 발생");
+                console.error("삭제 요청 실패:", error);
+            });
+        }
+    }
+
+</script>
+
+</body>
+</html>

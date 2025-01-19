@@ -1,0 +1,111 @@
+/* 기본 스타일 */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f8ff;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+/* 제목 스타일 */
+h1 {
+  text-align: center;
+  color: #0056b3;
+}
+
+h2 {
+  text-align: center;
+  color: #ff4d4d;
+}
+
+/* 검색 폼 */
+.search-form {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.search-input {
+  width: 300px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.search-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.search-btn:hover {
+  background-color: #0056b3;
+}
+
+/* 게시글 리스트 */
+.post-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.post-item {
+  padding: 15px;
+  background-color: #e6f7ff;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.post-title {
+  font-size: 20px;
+  color: #003366;
+}
+
+.post-writer, .post-date {
+  font-size: 14px;
+  color: #0066cc;
+}
+
+.post-divider {
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin-top: 10px;
+}
+
+/* 페이지네이션 스타일 */
+.pagination {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.pagination-link {
+  color: #007bff;
+  font-weight: bold;
+  margin: 0 15px;
+}
+
+.pagination-link:hover {
+  text-decoration: underline;
+}
+
+/* 로그인 사용자 정보 */
+.user-info {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 16px;
+  color: #0056b3;
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>글 게시판</title>
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+<h1>글 게시판</h1>
+
+<!-- 로그인된 사용자 정보 표시 -->
+<div>
+  <p class="greeting" th:text="'안녕하세요, ' + ${user.nickname} + '님!'">안녕하세요, 사용자님!</p>
+
+  <!-- 회원 정보 수정 링크 -->
+  <div class="modify-link">
+    <a th:href="@{/user/modify}">회원 정보 수정</a>
+    <a th:href="@{/post/write}" class="write-btn">글 작성</a>
+  </div>
+
+</div>
+
+<div>
+  <a th:href="@{/post/postSearch}">게시글 검색</a>
+</div>
+
+<!-- 로그아웃 버튼 -->
+<button class="logout-btn" th:onclick="|window.location.href='/logout'|">로그아웃</button>
+
+<!-- 게시글 리스트 -->
+<div>
+  <h2>글 리스트</h2>
+  <ul>
+    <li th:each="post : ${posts}">
+      <a th:href="@{/post/read/{id}(id=${post.id})}" th:text="${post.title}">글 제목</a>
+      <p th:text="'작성자: ' + ${post.writer}">작성자: 작성자</p>
+    </li>
+  </ul>
+</div>
+
+<!-- 페이지네이션 -->
+<div class="pagination">
+  <a th:if="${hasPrev}" th:href="@{'?page=' + ${previous}}" th:text="'이전'">이전</a>
+  <a th:if="${hasNext}" th:href="@{'?page=' + ${next}}" th:text="'다음'">다음</a>
+</div>
+</body>
+</html>

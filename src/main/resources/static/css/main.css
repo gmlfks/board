@@ -1,0 +1,122 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f8ff;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+  color: #0056b3;
+}
+
+div {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+p, a {
+  font-size: 16px;
+}
+
+.greeting {
+  font-size: 24px;
+  font-weight: bold;
+  color: #003366;
+  margin-bottom: 20px;
+}
+
+a {
+  color: #0056b3;
+  text-decoration: none;
+  font-weight: bold;
+  margin-right: 20px;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.modify-link {
+  display: flex;
+  justify-content: center;
+  gap: 30px;  /* 글 작성 버튼과 회원 정보 수정 버튼 사이의 공간 조정 */
+  margin-bottom: 20px;
+}
+
+.modify-link a {
+  font-size: 16px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  font-size: 16px;
+  text-align: center;
+  display: inline-block;
+}
+
+.modify-link a:hover {
+  background-color: #0056b3;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #e6f7ff;
+  border-radius: 5px;
+}
+
+li a {
+  display: block;
+  font-size: 18px;
+  color: #003366;
+}
+
+li p {
+  margin: 5px 0 0;
+  font-size: 14px;
+  color: #0066cc;
+}
+
+div.pagination {
+  text-align: center;
+  margin-top: 20px;
+}
+
+div.pagination a {
+  margin: 0 10px;
+  color: #0056b3;
+  font-weight: bold;
+}
+
+div.pagination a:hover {
+  text-decoration: underline;
+}
+
+/* 로그아웃 버튼 스타일 */
+.logout-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 8px 16px;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.logout-btn:hover {
+  background-color: #c0392b;
+}

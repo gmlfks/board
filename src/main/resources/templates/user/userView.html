@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>User Details</title>
+  <style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f9f9f9;
+        margin: 0;
+        padding: 0;
+    }
+    h1 {
+        text-align: center;
+        color: #333;
+        margin: 30px 0;
+        font-size: 28px;
+    }
+    .user-details {
+        width: 70%; /* 테이블 너비를 더 좁게 */
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .user-details table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px; /* 테이블 아래 여백 추가 */
+    }
+    .user-details th, .user-details td {
+        padding: 12px;
+        text-align: left;
+        font-size: 18px; /* 폰트 크기 약간 키움 */
+    }
+    .user-details th {
+        background-color: #007bff;
+        color: white;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+    .user-details td {
+        background-color: #f9f9f9;
+        border-bottom: 1px solid #ddd;
+    }
+    .action-btn {
+        padding: 12px 20px;
+        background-color: #28a745;
+        color: white;
+        font-weight: bold;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+        margin-right: 10px;
+    }
+    .action-btn:hover {
+        background-color: #218838;
+    }
+    .cancel-btn {
+        background-color: #dc3545;
+    }
+    .cancel-btn:hover {
+        background-color: #c82333;
+    }
+    .buttons {
+        display: flex;
+        justify-content: center; /* 버튼들 가운데 정렬 */
+        gap: 20px; /* 버튼 간격 */
+    }
+  </style>
+</head>
+<body>
+<h1>회원 정보</h1>
+<div class="user-details">
+  <table>
+    <tr>
+      <th>ID</th>
+      <td th:text="${user.id}">1</td>
+    </tr>
+    <tr>
+      <th>Username</th>
+      <td th:text="${user.username}">username</td>
+    </tr>
+    <tr>
+      <th>Nickname</th>
+      <td th:text="${user.nickname}">nickname</td>
+    </tr>
+    <tr>
+      <th>Email</th>
+      <td th:text="${user.email}">email@example.com</td>
+    </tr>
+  </table>
+
+  <!-- 수정 및 돌아가기 버튼 -->
+  <div class="buttons">
+    <a th:href="@{/user/modify}" class="action-btn">수정</a>
+    <a href="/user/users" class="cancel-btn action-btn">회원 리스트로 돌아가기</a>
+  </div>
+</div>
+</body>
+</html>
