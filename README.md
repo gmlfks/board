@@ -29,10 +29,11 @@ BoardService는 사용자들이 효율적으로 게시글을 작성하고 관리
 
 
 ## 프로젝트 기능
-- User / Post / Comment Entity 설계 및 비즈니스 로직 구현
-  User : [Tistory]([https://www.google.com](https://gaeran.tistory.com/51))
-  Post :
-  Comment :
+- **User / Post / Comment Entity 설계 및 비즈니스 로직 구현**
+  - User : [Tistory](https://gaeran.tistory.com/51)
+  - Post : (여기에 링크 추가)
+  - Comment : (여기에 링크 추가)
+
 
 
 - Spring Security
