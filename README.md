@@ -22,21 +22,24 @@ BoardService는 사용자들이 효율적으로 게시글을 작성하고 관리
 - Thymeleaf
 - MySQL
 
-## 설치
+## DB 설계
 
-build.gradle 참고
+## API 설계
 
-```bash
-# 클론 프로젝트
-git clone https://github.com/gmlfks/board.git
 
 
 ## 프로젝트 기능
-사용 방법을 여기에 적습니다.
+- User / Post / Comment Entity 설계 및 비즈니스 로직 구현
+  User : [Tistory]([https://www.google.com](https://gaeran.tistory.com/51))
+  Post :
+  Comment :
 
 
+- Spring Security
+  Login/Logout
+  
 ## 라이선스
-라이선스 정보를 여기에 적습니다.
+
 
 
 
