@@ -53,7 +53,7 @@
 
 ## 📑 API 설계  
 <p align="center">
-  <img src="./BoardAPI.png" width="600">
+  <img src="./Board API.png" width="600">
 </p>
 
 ---
