@@ -1,6 +1,6 @@
 # BoardService
 
-웹 애플리케이션의 전반적인 과정을 아우르는 게시판 개발 및 최신 기능입니다.
+웹 애플리케이션의 전반적인 과정을 아우르는 웹 게시판 개발입니다.
 
 ## 소개
 
@@ -31,13 +31,13 @@ BoardService는 사용자들이 효율적으로 게시글을 작성하고 관리
 ## 프로젝트 기능
 - **User / Post / Comment Entity 설계 및 비즈니스 로직 구현**
   - User : [Tistory : 회원 관리 설계](https://gaeran.tistory.com/51)
-  - Post : (여기에 링크 추가)
+  - Post : [로그인 한 객체 글 작성 / 수정 / 삭제 권한 부여](https://gaeran.tistory.com/50)
   - Comment : (여기에 링크 추가)
 
 
 
 - Spring Security
-  Login/Logout
+  Login : https://gaeran.tistory.com/49
   
 ## 라이선스
 
