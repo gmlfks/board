@@ -52,7 +52,7 @@
 ---
 
 ## 📑 API 설계  
-> (API 엔드포인트 및 설명 추가 예정)  
+![BoardService_API](./BoardAPI.png)
 
 ---
 
