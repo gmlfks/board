@@ -1,46 +1,60 @@
-# BoardService
+# 📝 BoardService
 
-웹 애플리케이션의 전반적인 과정을 아우르는 웹 게시판 개발입니다.
+> **웹 애플리케이션의 전반적인 과정을 아우르는 웹 게시판 개발 프로젝트**  
+> 사용자들이 쉽고 효율적으로 게시글을 작성하고 관리할 수 있도록 돕는 플랫폼입니다.
 
-## 소개
+## 📌 목차
+- [🔧 개발 환경](#-개발-환경)
+- [📂 프로젝트 기능](#-프로젝트-기능)
+- [🗂️ DB 설계](#-DB-설계)
+- [📑 API 설계](#-API-설계)
+- [📌 API 명세서](#-API-명세서)
 
-BoardService는 사용자들이 효율적으로 게시글을 작성하고 관리할 수 있도록 돕는 플랫폼입니다.
-쉽게 게시글을 작성하고, 편리하게 검색하고 관리할 수 있는 서비스를 제공합니다.
+---
 
-## 목차
-- [개발환경](#개발환경)
-- [프로젝트 기능](#프로젝트-기능)
-- [라이선스](#라이선스)
+## 🔧 개발 환경
 
-## 개발 환경
+| 기술 스택      | 버전 / 설명 |
+|--------------|-------------|
+| **Framework** | Spring Boot 3.4.1 |
+| **Build Tool** | Gradle (Groovy) |
+| **Database** | MySQL |
+| **ORM** | JPA (Spring Data JPA) |
+| **Security** | Spring Security |
+| **View Template** | Thymeleaf |
+| **Utility** | Lombok |
 
-- SpringBoot 3.4.1
-- Gradle - Groovy
-- JPA(Spring Data JPA)
-- Spring Security
-- Lombok
-- Thymeleaf
-- MySQL
+---
 
-## DB 설계
+## 📂 프로젝트 기능
 
-## API 설계
+### 📌 사용자 / 게시글 / 댓글 기능
+✔ **User**  
+- [회원 관리 설계](https://gaeran.tistory.com/51)
 
+✔ **Post**  
+- [로그인한 사용자만 글 작성 / 수정 / 삭제 가능](https://gaeran.tistory.com/50)  
+- [게시글 조회수 카운팅](https://gaeran.tistory.com/54)
 
+✔ **Comment**  
+- (여기에 링크 추가)
 
-## 프로젝트 기능
-- **User / Post / Comment Entity 설계 및 비즈니스 로직 구현**
-  - User : [Tistory : 회원 관리 설계](https://gaeran.tistory.com/51)
-  - Post : [로그인 한 객체 글 작성 / 수정 / 삭제 권한 부여](https://gaeran.tistory.com/50)
-  - Comment : (여기에 링크 추가)
+---
 
+## 🔐 Spring Security  
+🔗 **[Spring Security 설정](https://gaeran.tistory.com/49)**
 
+---
 
-- Spring Security
-  Login : https://gaeran.tistory.com/49
-  
-## 라이선스
+## 🗂️ DB 설계  
+> (ERD 또는 테이블 설계 추가 예정)  
 
-https://github.com/hojunnnnn/board.git
+---
 
+## 📑 API 설계  
+> (API 엔드포인트 및 설명 추가 예정)  
 
+---
+
+## 📌 API 명세서  
+> (API 상세 명세 추가 예정)  
