@@ -32,6 +32,7 @@
 ✔ **User**  
 - [회원 관리 설계](https://gaeran.tistory.com/51)
 - [@Valid 회원 유효성 검사](https://gaeran.tistory.com/52)
+- [OAuth2.0 소셜 로그인](https://gaeran.tistory.com/53)
 
 ✔ **Post**  
 - [로그인한 사용자만 글 작성 / 수정 / 삭제 가능](https://gaeran.tistory.com/50)  
