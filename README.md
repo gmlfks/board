@@ -47,7 +47,9 @@
 ---
 
 ## 🗂️ DB 설계  
-> (ERD 또는 테이블 설계 추가 예정)  
+<p align="center">
+  <img src="./Board DB.png" width="600">
+</p>
 
 ---
 
